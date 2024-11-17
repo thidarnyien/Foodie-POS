@@ -27,6 +27,7 @@ interface Props {
 
     return (
       <Box
+      
         sx={{
           position: "relative",
           top: { md: -10, lg: -110 },
@@ -61,7 +62,7 @@ interface Props {
                   {menusToShow?.map(menu=> {
                   const {id,name,price,imageUrl} = menu;
                       return(
-                        <Link style={{textDecoration: "none"}} href= {`order/menus/${id}?tableId=${tableId}`}>
+                        <Link key={id} style={{textDecoration: "none"}} href= {`order/menus/${id}?tableId=${tableId}`}>
                           <MenuCard id={id} name={name} price={price} imageUrl= {imageUrl as string} />
                         </Link>
                       )}

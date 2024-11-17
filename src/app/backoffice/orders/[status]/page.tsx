@@ -64,7 +64,7 @@ export default async function OrderPage({params}: Props){
                     },include: {addonCategory: true}
                 })
                 return (
-                    <OrderCard order={order} addons={addons} isAdmin/>
+                    <OrderCard key={order.id} order={order} addons={addons} isAdmin/>
                 )})
                 }
             </Box>

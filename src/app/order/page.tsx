@@ -29,7 +29,7 @@ export default async function OrderApp({searchParams}: Props){
     // console.log(company);
     
     // console.log(menus);
-    if(!company && !tableId) return null;
+    if(!company) return null;
 
     return(
         <Box>

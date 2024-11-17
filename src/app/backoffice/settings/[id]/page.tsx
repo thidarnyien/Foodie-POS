@@ -4,13 +4,14 @@ import { getCompany, updateCompany } from "../actions";
 
 
 interface Props{
-    id: number
+  params: {id:string}
 }
-export default async function UpdateCompanyPage({id}: Props){
 
+export default async function UpdateCompanyPage({params}: Props){
+    const id = Number(params.id);
     const company = await getCompany(id);
+
     return(
-        
             // console.log("hello update page")
             <>
               <h3>Update Company</h3>
