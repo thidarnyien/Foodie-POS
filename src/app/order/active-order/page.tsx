@@ -25,7 +25,7 @@ export default async function ActiveOrderPage({searchParams}: Props){
     
     if(!orders) return (
         <Box sx={{width: "100vw", height: "100vh", margin: "0 auto", display: "fles", justifyContent: "center", alignItems: "center"}}>
-            <Typography sx={{mb: 3}}>You don't have any active Orders</Typography>
+            <Typography sx={{mb: 3}}>You don&apos;t have any active Orders</Typography>
             <Link href={`/order/menus`}>
                 <Button variant="contained">Go to home page</Button>
             </Link>
@@ -55,7 +55,7 @@ export default async function ActiveOrderPage({searchParams}: Props){
                             id: {in: addonIds}
                         },include: {addonCategory: true} })
                         return(
-                            <OrderCard order={order} addons={addons} isAdmin={false}/>
+                            <OrderCard key={order.id} order={order} addons={addons} isAdmin={false}/>
                         )
                         // return(
                         //     <Box sx={{mb: 2}}>

@@ -46,7 +46,7 @@ export default async function AddonCategoriesPage() {
       <Box sx={{ mt: 3, display: "flex", flexWrap: "wrap",
           }}>
         {addonCategories.map((addonCategory)=> (
-        <Link style={{textDecoration: "none"}} href={`/backoffice/addon-categories/${addonCategory.id}`}>
+        <Link key={addonCategory.id} style={{textDecoration: "none"}} href={`/backoffice/addon-categories/${addonCategory.id}`}>
           <AddonCategoryCard title={addonCategory.name} isRequired = {addonCategory.isRequired} ></AddonCategoryCard>
         </Link>
         

@@ -75,7 +75,7 @@ export default function MenuUpdatePage({params}:props) {
           control={<Checkbox checked={menu.isAvailable ? true : false} />}
           label="Available"
         /> */}
-        <FormControlLabel
+        {/* <FormControlLabel
           control={
             <Checkbox
        
@@ -86,7 +86,7 @@ export default function MenuUpdatePage({params}:props) {
             />
           }
           label="Avaiable"
-        />
+        /> */}
         <Button
           sx={{ my: 2, width: "fit-content" }}
           variant="contained"

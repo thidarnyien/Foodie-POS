@@ -42,7 +42,7 @@ export default async function Cart({searchParams}: Props){
                 {cardOrders.map((cardOrder)=>{
                     const {menu, quantity, id, OrderAddons} = cardOrder;
                     return(
-                        <Box sx={{mb: 2}}>
+                        <Box key={cardOrder.id} sx={{mb: 2}}>
                             {/* <Box sx={{mb: 2}}>
                                 <Typography>Order ID - {id}</Typography>
                             </Box> */}
