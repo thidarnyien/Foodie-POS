@@ -20,7 +20,7 @@ import { getCompanyAddonCategories } from "@/libs/actions";
         <Box
           component={"form"}
           action={createNewAddon}
-          sx={{ mt: 2, display: "flex", flexDirection: "column" }}
+          sx={{ mt: 2, display: "flex", flexDirection: "column" , width: "300px"}}
         >
           
           <TextField label="Name" name="name" />
