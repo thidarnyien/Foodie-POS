@@ -3,6 +3,7 @@ import { ORDERSTATUS, Prisma } from "@prisma/client";
 import { Cardo } from "next/font/google";
 import { confirmCartOrder, deleteCartOrder, getTableTotalPrice } from "../actions";
 import Link from "next/link";
+import { prisma } from "@/libs/prisma";
 
 interface Props{
     searchParams:{
