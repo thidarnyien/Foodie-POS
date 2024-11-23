@@ -44,16 +44,18 @@ export function MenuCard({ id, name,price,imageUrl, showIsAvailable, isAvailable
             alignItems="center"
           >
             <Typography variant="h6">{name}</Typography>
+            <Typography variant="body2" color="primary" fontSize={18}>
+              Ks {Number(price)}
+            </Typography>
           </Box>
+         
           {showIsAvailable && <Box
             display="flex"
             justifyContent="space-between"
             alignItems="center"
             mt={2}
           >
-            <Typography variant="body2" color="primary" fontSize={18}>
-              Ks {Number(price)}
-            </Typography>
+            
             <Chip
               label={isAvailable ? "Available" : "Sold Out"}
               color={isAvailable ? "success" : "error"}
