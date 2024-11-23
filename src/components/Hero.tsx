@@ -31,7 +31,7 @@ const Hero = () => {
             customers with QR code ordering system.
 
           </Typography>
-          <Typography variant="h2">Staging</Typography>
+          <Typography variant="h3">Staging Page</Typography>
           <Box
             sx={{
               display: "flex",
