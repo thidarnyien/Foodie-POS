@@ -40,7 +40,8 @@ export function MenuCard({ id, name,price,imageUrl, showIsAvailable, isAvailable
         >
           <Box
             display="flex"
-            justifyContent="space-between"
+            flexDirection="column"
+            // justifyContent="space-between"
             alignItems="center"
           >
             <Typography variant="h6">{name}</Typography>
