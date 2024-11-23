@@ -171,7 +171,7 @@ export async function confirmCartOrder(formData:FormData) {
     }
 
     revalidatePath("/order/cart");
-    revalidatePath("/backoffice/orders/pending");
+    // revalidatePath("/backoffice/orders/pending");
     redirect(`/order/active-order?tableId=${tableId}`);
 }
 
