@@ -29,7 +29,9 @@ const Hero = () => {
           >
             Manage your menu catelog easily with Foodie POS and entice your
             customers with QR code ordering system.
+
           </Typography>
+          <Typography variant="h2">Staging</Typography>
           <Box
             sx={{
               display: "flex",
