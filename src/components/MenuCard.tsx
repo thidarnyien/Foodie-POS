@@ -40,28 +40,26 @@ export function MenuCard({ id, name,price,imageUrl, showIsAvailable, isAvailable
         >
           <Box
             display="flex"
-            flexDirection="column"
-            // justifyContent="space-between"
+            justifyContent="space-between"
             alignItems="center"
           >
             <Typography variant="h6">{name}</Typography>
-            <Typography variant="body2" color="primary" fontSize={18}>
-              Ks {Number(price)}
-            </Typography>
           </Box>
-          {showIsAvailable && <Box
+          <Box
             display="flex"
             justifyContent="space-between"
             alignItems="center"
             mt={2}
           >
-            
-            <Chip
+            <Typography variant="body2" color="primary" fontSize={18}>
+              Ks {Number(price)}
+            </Typography>
+            {showIsAvailable && <Chip
               label={isAvailable ? "Available" : "Sold Out"}
               color={isAvailable ? "success" : "error"}
               size="small"
-            />
-          </Box>}
+            />}
+          </Box>
         </CardContent>
       </Card>
     </Box>
