@@ -1,16 +1,35 @@
-// "use client";
+"use client";
 import { Box, Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
 import { createMenuCategory } from "../actions";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
-export default async function NewMenuCategoryPage() {
+export default function NewMenuCategoryPage() {
   // const newMenuCategory = await prisma.menuCategories.create()
+  const [loading, setLoading] = useState(false)
+
+  const handleCreateMenuCategory = async (formData: FormData) =>{
+      try {
+        setLoading(true);
+        const response = await createMenuCategory(formData);
+        if(response.errors){
+          setLoading(false)
+          response.errors.forEach(err => toast.error(err.message))
+        }else{
+          setLoading(false)
+          toast.success("Menu Category created successfully!")
+        }
+      } catch (error) {
+        setLoading(false)
+      }
+  }
 
   return (
     <>
       <h3>New Menu Category</h3>
       <Box
       component={"form"}
-      action={createMenuCategory}
+      action={handleCreateMenuCategory}
        sx={{ my: 2, display: "flex", flexDirection: "column" }}>
         <TextField
           sx={{ my: 2, width: "350px" }}
@@ -31,7 +50,8 @@ export default async function NewMenuCategoryPage() {
           variant="contained"
           type="submit"
         >
-          Create
+          {loading ? "Loading..." : "Create"}
+        
         </Button>
       </Box>
     </>

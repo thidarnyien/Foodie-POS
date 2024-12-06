@@ -25,6 +25,7 @@ export function UpdateMenuForm({menu, menuCategories, selectedMenuCategories, se
     const  handleUpdateClientMenu=async (formData : FormData)=>{
         // console.log(formData);
         try{
+            setLoading(true);
             const file = formData.get("file") as File;
             if(file.size){
                 const {url} = await upload(file.name, file, {
@@ -35,12 +36,14 @@ export function UpdateMenuForm({menu, menuCategories, selectedMenuCategories, se
             }
         const response = await updateMenu(formData);
         if(response?.errors){
+          setLoading(false);
           response.errors.forEach(error => toast.error(error.message));
         }else{
+          setLoading(false);
           toast.success("Menu Update Successfully.")
           router.push("/backoffice/menus");
         }
-        setLoading(false);
+        
         }catch(err){
             setLoading(false);
         }

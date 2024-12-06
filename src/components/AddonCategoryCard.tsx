@@ -9,7 +9,7 @@ interface props{
     title : string | null
     isRequired: boolean
 }
-export default function Component({title, isRequired}:props) {
+export default function AddonCategoryCard({title, isRequired}:props) {
   return (
     <Card sx={{ width: 160, height: 160, borderRadius: 2, boxShadow: 2 , mr: 3, mb: 3,
         transition: "transform 0.2s, box-shadow 0.2s",
